@@ -8,3 +8,9 @@ docker-compose run --rm wp-cli install-wp
 
 If you want to run wp-cli commands:
 docker-compose run --rm wp-cli plugin list
+
+If you want to access mysql:
+mysql -uwordpress -pwordpress -h127.0.0.1 -P8306 wordpress
+
+WordPress REST API is available at:
+http://localhost:8080/wp-json/
