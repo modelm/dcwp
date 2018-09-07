@@ -1,0 +1,10 @@
+Set up a headless WordPress instance using Docker Compose.
+
+Initialize containers
+docker-compose up -d
+
+Install WP, install & activate some useful plugins, install & activate no-theme which displays nothing.
+docker-compose run --rm wp-cli install-wp
+
+If you want to run wp-cli commands:
+docker-compose run --rm wp-cli plugin list
