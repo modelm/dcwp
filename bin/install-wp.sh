@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+set -ex
+
+whoami
+pwd
+env
+
 if wp core is-installed
 then
 	echo "WordPress is already installed, exiting."
