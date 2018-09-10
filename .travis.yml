@@ -2,7 +2,8 @@ services:
     - docker
 
 before_script:
-    - docker-compose up -d
+    - docker-compose up
+    - sleep 30 # Wait for mysql to become available.
 
 script:
     - docker-compose run wp-cli install-wp
