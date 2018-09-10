@@ -19,12 +19,3 @@ wp option update permalink_structure "/%year%/%monthnum%/%postname%/" --skip-the
 
 # This theme is (nearly) empty so nothing displays on the frontend. REST API still works.
 wp theme install --activate https://github.com/modelm/no-theme/archive/master.zip
-
-wp plugin install --activate \
-	acf-to-wp-api \
-	advanced-custom-fields \
-	custom-post-type-ui \
-	ewww-image-optimizer \
-	wp-migrate-db \
-	wp-rest-api-v2-menus \
-	https://github.com/wp-graphql/wp-graphql/archive/v0.0.33.zip

@@ -2,23 +2,18 @@
 
 [![Build status][build-status]][travis-ci]
 
-This project is a boilerplate starter for headless WordPress including:
+This project is a minimalist boilerplate development starter kit for headless WordPress. It uses the official [Docker WordPress image][docker-wordpress] and [a (nearly) empty theme][no-theme] to effectively disable the WordPress frontend.
 
-* [Official Docker WordPress image][docker-wordpress]
-* [No Theme](https://github.com/modelm/no-theme) to effectively disable the WordPress frontend
-* [ACF to WP-API](https://wordpress.org/plugins/acf-to-wp-api/)
-* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
-* [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
-* [EWWW Image Optimizer](https://wordpress.org/plugins/ewww-image-optimizer/)
-* [WP Migrate DB](https://wordpress.org/plugins/wp-migrate-db/)
-* [WP-REST-API V2 Menus](https://wordpress.org/plugins/wp-rest-api-v2-menus/)
-* [WPGraphQL](https://wpgraphql.com/)
+## Dependencies
+
+* [Docker Compose][docker-compose]
 
 ## Setup
 
 1. Clone this repo.
 
        git clone git@github.com:modelm/docker-headless-wordpress.git
+       cd docker-headless-wordpress
 
 2. Initialize containers.
 
@@ -32,15 +27,17 @@ This project is a boilerplate starter for headless WordPress including:
 
 ### Apache
 
-The `wordpress` container exposes Apache on host port 8080:
+The `wordpress` container exposes Apache on host port `8080`:
 
 [http://localhost:8080/wp-json/](http://localhost:8080/wp-json/)
 
-[http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) `wordpress`/`wordpress`
+[http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/)
+
+The default credentials for the WordPress admin user are `wordpress`/`wordpress`.
 
 ### MySQL
 
-The `mysql` container exposes MySQL on host port 8306:
+The `mysql` container exposes MySQL on host port `8306`:
 
     mysql -uwordpress -pwordpress -h127.0.0.1 -P8306 wordpress
 
@@ -51,6 +48,34 @@ The `wp-cli` container supports WP-CLI commands as well as arbitrary shell code 
     docker-compose run --rm wp-cli plugin list
     docker-compose run --rm wp-cli php -i
 
+You may want to set up a shell alias for easy access:
+
+    alias dwp='docker-compose run --rm wp-cli'
+
+## Examples
+
+Install & activate some plugins you might want in a typical headless setup:
+
+    docker-compose run --rm wp-cli plugin install --activate \
+        acf-to-wp-api \
+        advanced-custom-fields \
+        custom-post-type-ui \
+        wp-rest-api-v2-menus \
+        https://github.com/wp-graphql/wp-graphql/archive/master.zip
+
+Uninstall & delete all plugins:
+
+    docker-compose run --rm wp-cli plugin uninstall --deactivate --all --skip-packages
+
+Uninstall & delete unused themes:
+
+    docker-compose run --rm wp-cli theme delete \
+        twentyfifteen \
+        twentysixteen \
+        twentyseventeen
+
 [build-status]: https://travis-ci.org/modelm/docker-headless-wordpress.svg?branch=master
 [travis-ci]: https://travis-ci.org/modelm/docker-headless-wordpress
+[docker-compose]: https://docs.docker.com/compose/
 [docker-wordpress]: https://hub.docker.com/_/wordpress/
+[no-theme]: https://github.com/modelm/no-theme
