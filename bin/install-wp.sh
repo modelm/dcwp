@@ -1,10 +1,13 @@
 #!/usr/bin/env sh
 
-set -ex
+set -x
 
 whoami
 pwd
 env
+ls -la
+ls -la wp-content
+ls -la wp-content/uploads
 
 if wp core is-installed
 then

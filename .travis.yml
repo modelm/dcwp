@@ -6,4 +6,4 @@ before_script:
     - sleep 10 # Wait for mysql to become available.
 
 script:
-    - docker-compose run wp-cli install-wp
+    - docker-compose run wp-cli install-wp --user 33:33 # Specify UID 33 to avoid permission errors - see https://github.com/docker-library/wordpress/issues/256.
