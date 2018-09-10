@@ -19,7 +19,7 @@ This project is a minimalist boilerplate development starter kit for headless Wo
 
        docker-compose up -d
 
-3. Install WordPress, plugins, and theme. Optionally edit `bin/install-wp.sh` first to suit your needs.
+3. Install WordPress and theme. Optionally edit `bin/install-wp.sh` first to suit your needs.
 
        docker-compose run --rm wp-cli install-wp
 
