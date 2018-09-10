@@ -6,4 +6,4 @@ before_script:
     - sleep 10 # Wait for mysql to become available.
 
 script:
-    - docker-compose run wp-cli install-wp --user 82:82 # Specify UID 82 to avoid collision with user xfs (UID 33) - see https://github.com/docker-library/wordpress/issues/256.
+    - docker-compose run --user 82:82 wp-cli install-wp # Specify UID 82 to avoid collision with user xfs (UID 33) - see https://github.com/docker-library/wordpress/issues/256.

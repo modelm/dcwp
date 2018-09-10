@@ -8,6 +8,7 @@ env
 ls -la
 ls -la wp-content
 ls -la wp-content/uploads
+cat /etc/passwd
 
 if wp core is-installed
 then
