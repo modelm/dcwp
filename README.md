@@ -54,25 +54,22 @@ You may want to set up a shell alias for easy access:
 
 ## Examples
 
-Install & activate some plugins you might want in a typical headless setup:
-
-    docker-compose run --rm wp-cli plugin install --activate \
-        acf-to-wp-api \
-        advanced-custom-fields \
-        custom-post-type-ui \
-        wp-rest-api-v2-menus \
-        https://github.com/wp-graphql/wp-graphql/archive/master.zip
-
 Uninstall & delete all plugins:
 
     docker-compose run --rm wp-cli plugin uninstall --deactivate --all --skip-packages
 
-Uninstall & delete unused themes:
+Uninstall & delete default themes:
 
-    docker-compose run --rm wp-cli theme delete \
-        twentyfifteen \
-        twentysixteen \
-        twentyseventeen
+    docker-compose run --rm wp-cli theme delete twentyfifteen twentysixteen twentyseventeen
+
+Install & activate some plugins you might want in a typical headless setup:
+
+    docker-compose run --rm wp-cli plugin install --activate acf-to-wp-api advanced-custom-fields custom-post-type-ui wp-rest-api-v2-menus https://github.com/wp-graphql/wp-graphql/archive/master.zip
+
+View service logs:
+
+    docker-compose logs wordpress
+    docker-compose logs mysql
 
 [build-status]: https://travis-ci.org/modelm/docker-headless-wordpress.svg?branch=master
 [travis-ci]: https://travis-ci.org/modelm/docker-headless-wordpress
