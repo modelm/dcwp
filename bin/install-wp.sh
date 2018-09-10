@@ -1,15 +1,5 @@
 #!/usr/bin/env sh
 
-set -x
-
-whoami
-pwd
-env
-ls -la
-ls -la wp-content
-ls -la wp-content/uploads
-cat /etc/passwd
-
 if wp core is-installed
 then
 	echo "WordPress is already installed, exiting."
