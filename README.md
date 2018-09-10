@@ -28,7 +28,9 @@ This project is a boilerplate starter for headless WordPress including:
 
        docker-compose run --rm wp-cli install-wp
 
-## WordPress
+## Services
+
+### Apache
 
 The `wordpress` container exposes Apache on host port 8080:
 
@@ -36,13 +38,13 @@ The `wordpress` container exposes Apache on host port 8080:
 
 [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) `wordpress`/`wordpress`
 
-## MySQL
+### MySQL
 
 The `mysql` container exposes MySQL on host port 8306:
 
     mysql -uwordpress -pwordpress -h127.0.0.1 -P8306 wordpress
 
-## WP-CLI
+### WP-CLI
 
 The `wp-cli` container supports WP-CLI commands as well as arbitrary shell code e.g.
 
