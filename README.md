@@ -18,15 +18,15 @@ This project is a boilerplate starter for headless WordPress including:
 
 1. Clone this repo.
 
-        git clone git@github.com:modelm/docker-headless-wordpress.git
+       git clone git@github.com:modelm/docker-headless-wordpress.git
 
 2. Initialize containers.
 
-        docker-compose up -d
+       docker-compose up -d
 
 3. Install WordPress, plugins, and theme. Optionally edit `bin/install-wp.sh` first to suit your needs.
 
-        docker-compose run --rm wp-cli install-wp
+       docker-compose run --rm wp-cli install-wp
 
 ## WordPress
 
