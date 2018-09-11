@@ -54,17 +54,6 @@ You may want to set up a shell alias for easy access:
 
 ## Examples
 
-Uninstall & delete all plugins:
-
-    docker-compose run --rm wp-cli plugin uninstall --deactivate --all --skip-packages
-
-Uninstall & delete default themes:
-
-    docker-compose run --rm wp-cli theme delete \
-        twentyfifteen \
-        twentysixteen \
-        twentyseventeen
-
 Install & activate some plugins you might want in a typical headless setup:
 
     docker-compose run --rm wp-cli plugin install --activate \
