@@ -27,8 +27,8 @@ wp option update permalink_structure "/%year%/%monthnum%/%postname%/" --skip-the
 wp theme install --activate https://github.com/modelm/no-theme/archive/master.zip
 
 # Remove bundled packages.
-docker-compose run --rm wp-cli plugin uninstall --deactivate --all --skip-packages
-docker-compose run --rm wp-cli theme delete --skip-packages \
+wp plugin uninstall --deactivate --all --skip-packages
+wp theme delete --skip-packages \
 	twentyfifteen \
 	twentysixteen \
 	twentyseventeen
