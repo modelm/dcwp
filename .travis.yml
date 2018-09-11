@@ -3,7 +3,6 @@ services:
 
 before_script:
     - docker-compose up -d
-    - sleep 10 # Wait for mysql to become available.
 
 script:
     # The wordpress & wordpress:cli images use different UIDs for www-data.
