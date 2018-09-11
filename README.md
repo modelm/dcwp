@@ -60,11 +60,19 @@ Uninstall & delete all plugins:
 
 Uninstall & delete default themes:
 
-    docker-compose run --rm wp-cli theme delete twentyfifteen twentysixteen twentyseventeen
+    docker-compose run --rm wp-cli theme delete \
+        twentyfifteen \
+        twentysixteen \
+        twentyseventeen
 
 Install & activate some plugins you might want in a typical headless setup:
 
-    docker-compose run --rm wp-cli plugin install --activate acf-to-wp-api advanced-custom-fields custom-post-type-ui wp-rest-api-v2-menus https://github.com/wp-graphql/wp-graphql/archive/master.zip
+    docker-compose run --rm wp-cli plugin install --activate \
+        acf-to-wp-api \
+        advanced-custom-fields \
+        custom-post-type-ui \
+        wp-rest-api-v2-menus \
+        https://github.com/wp-graphql/wp-graphql/archive/master.zip
 
 View service logs:
 
