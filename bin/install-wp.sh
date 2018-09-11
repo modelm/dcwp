@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
-if ! nc mysql:3306
-then
+while ! nc -z mysql 3306
+do
 	echo "Waiting for MySQL..."
 	sleep 1
-fi
+done
 
 if wp core is-installed
 then
