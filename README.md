@@ -2,7 +2,7 @@
 
 [![Build status][build-status]][travis-ci]
 
-This project is a minimalist boilerplate development starter kit for headless WordPress. It uses the official [Docker WordPress image][docker-wordpress] and [a (nearly) empty theme][no-theme] to effectively disable the WordPress frontend.
+This is a minimalist development starter kit for headless WordPress using the official [Docker WordPress image][docker-wordpress] and [an empty theme][no-theme].
 
 ## Dependencies
 
@@ -67,6 +67,20 @@ View service logs:
 
     docker-compose logs wordpress
     docker-compose logs mysql
+
+## FAQ
+
+* How to import a SQL dump when the `mysql` container starts?
+
+https://github.com/docker-library/docs/tree/master/mariadb#initializing-a-fresh-instance
+
+* How to install PHP extensions?
+
+https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions
+
+* Why does the UID of www-data differ between the `wordpress` & `wordpress:cli` images?
+
+https://github.com/docker-library/wordpress/issues/256
 
 [build-status]: https://travis-ci.org/modelm/docker-headless-wordpress.svg?branch=master
 [travis-ci]: https://travis-ci.org/modelm/docker-headless-wordpress
