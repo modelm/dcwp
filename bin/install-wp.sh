@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+if ! nc mysql:3306
+then
+	echo "Waiting for MySQL..."
+	sleep 1
+fi
+
 if wp core is-installed
 then
 	echo "WordPress is already installed, exiting."
