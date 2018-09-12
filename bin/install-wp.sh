@@ -1,10 +1,12 @@
 #!/usr/bin/env sh
 
+printf "Waiting for MySQL."
 while ! nc -z mysql 3306
 do
-	echo "Waiting for MySQL..."
+	printf '.'
 	sleep 1
 done
+echo
 
 if wp core is-installed
 then
