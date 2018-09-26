@@ -1,14 +1,10 @@
 # Headless WordPress via Docker Compose
 
-[![Build status][build-status]][travis-ci]
+[![Build status][https://travis-ci.org/modelm/docker-headless-wordpress.svg]](https://travis-ci.org/modelm/docker-headless-wordpress)
 
-This is a minimalist development starter kit for headless WordPress.
+This is a development starter kit for headless WordPress using Docker Compose.
 
 Inspired by [chriszarate/docker-compose-wordpress](https://github.com/chriszarate/docker-compose-wordpress) & [postlight/headless-wp-starter](https://github.com/postlight/headless-wp-starter).
-
-## Dependencies
-
-* [Docker Compose][docker-compose]
 
 ## Setup
 
@@ -75,9 +71,3 @@ View service logs:
 * Why does the UID of www-data differ between the `wordpress` & `wordpress:cli` images?
 
     https://github.com/docker-library/wordpress/issues/256
-
-[build-status]: https://travis-ci.org/modelm/docker-headless-wordpress.svg?branch=master
-[travis-ci]: https://travis-ci.org/modelm/docker-headless-wordpress
-[docker-compose]: https://docs.docker.com/compose/
-[docker-wordpress]: https://hub.docker.com/_/wordpress/
-[no-theme]: https://github.com/modelm/no-theme
