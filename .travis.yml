@@ -8,5 +8,6 @@ script:
     # The wordpress & wordpress:cli images use different UIDs for www-data.
     # Specifying UID 33 ensures wp-cli can write to the files created by wordpress, since from inside that container, everything is owned by xfs.
     # See https://github.com/docker-library/wordpress/issues/256
-    - docker-compose run --user 33:33 wp-cli install-wordpress
+    - docker-compose run -T --rm --user 33:33 wp-cli install-wordpress
+    - docker-compose run -T --rm --user 33:33 wp-cli install-packages
     - curl -i localhost:8080
