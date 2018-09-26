@@ -4,7 +4,7 @@
 
 This is a minimalist development starter kit for headless WordPress.
 
-Inspired by [https://github.com/chriszarate/docker-compose-wordpress](chriszarate/docker-compose-wordpress) & [https://github.com/postlight/headless-wp-starter](postlight/headless-wp-starter).
+Inspired by [chriszarate/docker-compose-wordpress](https://github.com/chriszarate/docker-compose-wordpress) & [postlight/headless-wp-starter](https://github.com/postlight/headless-wp-starter).
 
 ## Dependencies
 
