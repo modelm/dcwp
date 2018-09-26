@@ -2,7 +2,9 @@
 
 [![Build status][build-status]][travis-ci]
 
-This is a minimalist development starter kit for headless WordPress using the official [Docker WordPress image][docker-wordpress] and [an empty theme][no-theme].
+This is a minimalist development starter kit for headless WordPress.
+
+Inspired by [https://github.com/chriszarate/docker-compose-wordpress](chriszarate/docker-compose-wordpress) & [https://github.com/postlight/headless-wp-starter](postlight/headless-wp-starter).
 
 ## Dependencies
 
@@ -72,15 +74,15 @@ View service logs:
 
 * How to import a SQL dump when the `mysql` container starts?
 
-https://github.com/docker-library/docs/tree/master/mariadb#initializing-a-fresh-instance
+    https://github.com/docker-library/docs/tree/master/mariadb#initializing-a-fresh-instance
 
 * How to install PHP extensions?
 
-https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions
+    https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions
 
 * Why does the UID of www-data differ between the `wordpress` & `wordpress:cli` images?
 
-https://github.com/docker-library/wordpress/issues/256
+    https://github.com/docker-library/wordpress/issues/256
 
 [build-status]: https://travis-ci.org/modelm/docker-headless-wordpress.svg?branch=master
 [travis-ci]: https://travis-ci.org/modelm/docker-headless-wordpress
