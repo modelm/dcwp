@@ -5,6 +5,7 @@ wp theme install --activate https://github.com/modelm/no-theme/archive/master.zi
 
 wp plugin install --activate \
 	gutenberg \
+	custom-fields-gutenberg \
 	pods \
 	wp-smushit \
 	rest-api-filter-fields \
