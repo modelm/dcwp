@@ -27,6 +27,8 @@ services:
 
   wp-cli:
     image: wordpress:cli
+    depends_on:
+      - wordpress
     volumes:
       - "./wordpress:/var/www/html:rw"
       - "./bin/install-wordpress.sh:/usr/local/bin/install-wordpress:ro"
