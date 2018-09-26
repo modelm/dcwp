@@ -5,6 +5,8 @@ services:
     image: mariadb
     ports:
       - "8306:3306"
+    volumes:
+      - "/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: "wordpress"
       MYSQL_DATABASE: "wordpress"
@@ -12,8 +14,6 @@ services:
       MYSQL_PASSWORD: "wordpress"
 
   wordpress:
-    depends_on:
-      - mysql
     image: wordpress
     ports:
       - "8080:80"
@@ -26,10 +26,19 @@ services:
       WORDPRESS_DEBUG: 1
 
   wp-cli:
-    depends_on:
-      - wordpress
     image: wordpress:cli
     volumes:
       - "./wordpress:/var/www/html:rw"
-      - "./bin/install-wp.sh:/usr/local/bin/install-wp:ro"
-    command: "wp --info"
+      - "./bin/install-wordpress.sh:/usr/local/bin/install-wordpress:ro"
+      - "./bin/install-packages.sh:/usr/local/bin/install-packages:ro"
+    command: "--info"
+
+  composer:
+    image: composer
+    volumes:
+      - "./wordpress:/var/www/html:rw"
+
+  phpunit:
+    image: phpunit/phpunit
+    volumes:
+      - "./wordpress:/app:ro"
