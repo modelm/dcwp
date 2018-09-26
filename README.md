@@ -12,18 +12,10 @@ Inspired by [chriszarate/docker-compose-wordpress](https://github.com/chriszarat
 
 ## Setup
 
-1. Clone this repo.
-
        git clone git@github.com:modelm/docker-headless-wordpress.git
        cd docker-headless-wordpress
-
-2. Initialize containers.
-
        docker-compose up -d
-
-3. Install WordPress and theme. Optionally edit `bin/install-wordpress.sh` first to suit your needs.
-
-       docker-compose run --rm wp-cli install-wordpress
+       docker-compose run -T --rm wp-cli install-wordpress
 
 ## Services
 
@@ -47,12 +39,12 @@ The `mysql` container exposes MySQL on host port `8306`:
 
 The `wp-cli` container supports WP-CLI commands as well as arbitrary shell code e.g.
 
-    docker-compose run --rm wp-cli plugin list
-    docker-compose run --rm wp-cli php -i
+    docker-compose run -T --rm wp-cli plugin list
+    docker-compose run -T --rm wp-cli php -i
 
 You may want to set up a shell alias for easy access:
 
-    alias dwp='docker-compose run --rm wp-cli'
+    alias dwp='docker-compose run -T --rm wp-cli'
 
 ## Examples
 
