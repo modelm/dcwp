@@ -23,4 +23,4 @@ wp core install \
 	--skip-email
 
 # Update permalink option so REST API routes work.
-wp option update permalink_structure "/%year%/%monthnum%/%postname%/" --skip-themes --skip-plugins
+wp option update permalink_structure "/%postname%/" --skip-themes --skip-plugins
