@@ -1,6 +1,6 @@
 # Headless WordPress via Docker Compose
 
-[![Build status][https://travis-ci.org/modelm/docker-headless-wordpress.svg]](https://travis-ci.org/modelm/docker-headless-wordpress)
+[![Build status](https://travis-ci.org/modelm/docker-headless-wordpress.svg)](https://travis-ci.org/modelm/docker-headless-wordpress)
 
 This is a development starter kit for headless WordPress using Docker Compose.
 
